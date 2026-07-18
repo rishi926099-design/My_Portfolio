@@ -5,8 +5,7 @@ import express from "express";
 import cors from "cors";
 
 // Sabhi routes ko import kar rahe hain.
-import heroRoutes from "./routes/hero.routes.js";
-import aboutRoutes from "./routes/about.routes.js";
+
 import skillRoutes from "./routes/skill.routes.js";
 import projectRoutes from "./routes/project.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
@@ -20,8 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/hero", heroRoutes);
-app.use("/api/about", aboutRoutes);
+
 app.use("/api/skills", skillRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/contact", contactRoutes);

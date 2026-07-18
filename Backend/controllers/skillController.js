@@ -3,10 +3,8 @@ import Skill from "../models/Skill.js";
 
 // Skills ka data fetch karne ke liye controller function bana rahe hain.
 export const getSkills = async (req, res) => {
-
   // try block me database se data fetch karenge.
   try {
-
     // Skill collection se saari skills fetch karenge.
     const skills = await Skill.find();
 
@@ -25,18 +23,13 @@ export const getSkills = async (req, res) => {
       totalSkills: skills.length,
       data: skills,
     });
-
-  }
-
-  // Agar database ya server me koi error aata hai to catch block execute hoga.
-  catch (error) {
-
+  } catch (error) {
+    // Agar database ya server me koi error aata hai to catch block execute hoga.
     // Internal server error ka response bhejenge.
     res.status(500).json({
       success: false,
       message: "Internal Server Error",
       error: error.message,
     });
-
   }
 };
